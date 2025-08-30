@@ -12,8 +12,8 @@ import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/c
 import { ClientLayout } from '@/core/components/layout/clientLayout';
 
 export const metadata = {
-  title: 'Livestocx',
-  description: 'Best deals, anything Livestock.',
+  title: 'Livestocx - AI-Powered Climate Resilience',
+  description: 'Smart AI-Powered Climate solutions for communities',
 };
 
 export default function RootLayout({ children }: { children: any }) {
