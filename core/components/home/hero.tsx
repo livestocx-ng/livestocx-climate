@@ -223,7 +223,7 @@ const Hero = () => {
                   <motion.div
                     style={{
                       position: 'absolute',
-                      bottom: -16,
+                      bottom: -64,
                       left: -16,
                       background: 'white',
                       borderRadius: 8,
@@ -254,7 +254,7 @@ const Hero = () => {
           </Grid>
         </Container>
       </Box>
-      <Box mt={{ sm: 40, base: 40, md: 40 }} style={{ overflow: 'hidden', maxWidth: '100%' }}>
+      <Box mt={{ sm: 100, base: 100, md: 40 }} style={{ overflow: 'hidden', maxWidth: '100%' }}>
         <motion.div
           style={{
             display: 'flex',
