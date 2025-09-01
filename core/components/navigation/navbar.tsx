@@ -8,9 +8,7 @@ import { Box, Burger, Button, Container, Drawer, Group, Image, rem, Stack } from
 export function Navbar() {
   const [scroll] = useWindowScroll();
 
-
   const [opened, { toggle }] = useDisclosure(false);
-
 
   return (
     <>
@@ -25,7 +23,7 @@ export function Navbar() {
           borderBottom: scroll.y > 0 ? '1px solid var(--mantine-color-gray-3)' : '',
         }}
       >
-        <Container size="xxl" py={5}>
+        <Container size="xxl" py={20}>
           <Group justify="space-between" align="center">
             {/* Left section: Logo and Navigation */}
             <Group>
