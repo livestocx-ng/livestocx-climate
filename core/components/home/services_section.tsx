@@ -114,7 +114,7 @@ const ServicesSection = () => {
                 <Image
                   src='/images/image_mobile_climate.jpg'
                   alt="Climate mobile app interface"
-                  w={400}
+                  w={{sm: 300, base: 300, md:400}}
                   mx="auto"
                   radius="md"
                   style={{ boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}
