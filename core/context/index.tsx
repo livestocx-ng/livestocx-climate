@@ -13,6 +13,7 @@ import {
   PromotionPlanDescription,
   VendorInfo,
 } from '../sdk/vendor';
+import { ClimateResilienceForecastInfo } from '../sdk/public';
 
 interface AppContextProps {
   authToken: string;
@@ -24,6 +25,7 @@ interface AppContextProps {
   paymentMethods: PaymentMethod[];
   accountInfo: AccountInfo | null;
   testimonials: TestimonialInfo[];
+  climateResilienceForecast: ClimateResilienceForecastInfo[];
   currentSubscriptionPlanId: number;
   chargeResponse: ChargeResponse | null;
   availableStates: AvailableStateInfo[];
@@ -50,6 +52,7 @@ interface AppContextProps {
   setTestimonials: (data: TestimonialInfo[]) => void;
   setPremiumSubscriptionPlans: (data: PremiumSubscriptionPlanDescription[]) => void;
   setProductUploadSubscriptionPlan: (data: ProductUploadSubscriptionPlanInfo) => void;
+  setClimateResilienceForecast: (climateResilienceForecast: ClimateResilienceForecastInfo[]) => void;
 }
 
 export const AppContext = createContext<AppContextProps>({
@@ -65,12 +68,14 @@ export const AppContext = createContext<AppContextProps>({
   chargeResponse: null,
   paymentMethods: [],
   marketplaceProducts: [],
+  climateResilienceForecast: [],
   currentSubscriptionPlanId: 0,
   premiumSubscriptionPlans: [],
   marketPlaceProductsCurrentPage: 1,
   marketPlaceProductsHasNextPage: false,
   productUploadSubscriptionPlan: null,
   marketPlaceProductsTotalPages: 0,
+  setClimateResilienceForecast: () => {},
   setListItems: () => {},
   setProductInfo: () => {},
   setVendorInfo: () => {},
@@ -231,6 +236,14 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
       },
     });
 
+  const [climateResilienceForecast, setClimateResilienceForecast] = useLocalStorage<ClimateResilienceForecastInfo[]>({
+    defaultValue: [],
+    key: 'climateResilienceForecast',
+    deserialize(value) {
+      return JSON.parse(value ?? '');
+    },
+  });
+
   return (
     <AppContext.Provider
       value={{
@@ -258,8 +271,10 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
         marketplaceProducts,
         setMarketPlaceProducts,
         premiumSubscriptionPlans,
+        climateResilienceForecast,
         currentSubscriptionPlanId,
         setPremiumSubscriptionPlans,
+        setClimateResilienceForecast,
         setCurrentSubscriptionPlanId,
         productUploadSubscriptionPlan,
         marketPlaceProductsTotalPages,

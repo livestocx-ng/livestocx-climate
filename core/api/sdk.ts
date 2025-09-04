@@ -5,15 +5,17 @@ import {
   PremiumSubscriptionApi,
   ProductUploadSubscriptionApi,
 } from '../sdk/vendor';
+import { WeatherApi } from '../sdk/public';
 import { appAxiosInstance } from './axios-instance';
 import { MarketplaceApi, ProductApi } from '../sdk/marketplace';
 import { TestimonialsApi } from '../sdk/communication';
 import { MeApi, SupportApi, UserListApi } from '../sdk/account';
 import { AddressHelperApi, AuthApi, HelpersApi, PasswordApi } from '../sdk/auth';
-
 export const ServerPath = process.env.NEXT_APP_CORE_SERVICE_HOST;
 
 export const authApi = new AuthApi(undefined, ServerPath, appAxiosInstance);
+
+export const weatherApi = new WeatherApi(undefined, ServerPath, appAxiosInstance);
 
 export const helperApi = new HelpersApi(undefined, ServerPath, appAxiosInstance);
 

@@ -51,6 +51,16 @@ echo " "
 echo " "
 echo " "
 
+
+echo "...[REBUILDING-PUBLIC-SDK-PROCESSING]"
+echo " "
+openapi-generator generate -i https://www.staging-api.livestocx.xyz/docs/public-service-json -g typescript-axios -o ../sdk/public 
+echo " "
+echo "...[REBUILDING-PUBLIC-SDK-SUCCESS]"
+echo " "
+echo " "
+echo " "
+
 echo " "
 echo " "
 echo " "

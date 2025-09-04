@@ -1,6 +1,6 @@
+import { useAppContext } from '@/core/context';
 import { useQuery } from '@tanstack/react-query';
 import { addressHelperApi } from '@/core/api/sdk';
-import { useAppContext } from '@/core/context';
 
 export default function useFetchAvailableStatesQuery() {
   const { availableStates, setAvailableStates } = useAppContext();

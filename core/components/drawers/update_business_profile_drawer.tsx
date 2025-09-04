@@ -3,11 +3,11 @@ import { Button, Drawer, NumberInput, ScrollArea, Select, Stack, TextInput } fro
 import { useForm } from '@mantine/form';
 import { showNotification } from '@mantine/notifications';
 import { useAppContext } from '@/core/context';
-import useFetchAvailableStatesQuery from '@/core/hooks/public/useFetchAvailableStatesQuery';
-import useFetchVendorInfoQuery from '@/core/hooks/vendor/useFetchVendorInfoQuery';
-import useUpdateBusinessProfileMutation from '@/core/hooks/vendor/useUpdateBusinessProfileMutation';
 import { UpdateVendorProfileDto } from '@/core/sdk/vendor';
+import useFetchVendorInfoQuery from '@/core/hooks/vendor/useFetchVendorInfoQuery';
+import useFetchAvailableStatesQuery from '@/core/hooks/public/useFetchAvailableStatesQuery';
 import { validateUpdateBusinessProfileForm } from '@/core/validations/vendor.validations';
+import useUpdateBusinessProfileMutation from '@/core/hooks/vendor/useUpdateBusinessProfileMutation';
 
 const UpdateBusinessProfileDrawer = ({
   isOpen,

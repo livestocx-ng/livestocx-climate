@@ -19,7 +19,7 @@ mkdir ../sdk
 
 cd ../sdk 
 
-mkdir auth account vendor communication marketplace
+mkdir auth account vendor communication marketplace public
 
 echo "...[GENERATE-SDKS-PROCESSING]"
 echo " "
@@ -58,6 +58,13 @@ echo " "
 openapi-generator generate -i https://www.staging-api.livestocx.xyz/docs/marketplace-service-json -g typescript-axios -o ../sdk/marketplace 
 echo " "
 echo "...[GENERATE-MARKETPLACE-SDK-SUCCESS]"
+
+
+echo "...[GENERATE-PUBLIC-SDK-PROCESSING]"
+echo " "
+openapi-generator generate -i https://www.staging-api.livestocx.xyz/docs/public-service-json -g typescript-axios -o ../sdk/public 
+echo " "
+echo "...[GENERATE-PUBLIC-SDK-SUCCESS]"
 
 echo " "
 echo "...[GENERATE-SDKS-SUCCESSFUL]"

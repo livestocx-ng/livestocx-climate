@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Box, Container, Grid, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Box, Container, Flex, Grid, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { useAppContext } from '@/core/context';
+import useFetchClimateResilienceForecastQuery from '@/core/hooks/public/useFetchClimateResilienceForecastQuery';
 import { Sponsors } from '@/core/utilities';
 
 const Hero = () => {
+  useFetchClimateResilienceForecastQuery();
+
+  const { climateResilienceForecast } = useAppContext();
+
   return (
     <Box>
       <Box
@@ -12,6 +18,73 @@ const Hero = () => {
         style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', paddingTop: 4 }}
       >
         <Container size="xl">
+          <Flex align="center" justify="start" gap="xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Box
+                style={{
+                  display: 'inline-block',
+                  padding: '8px 16px',
+                  background: 'var(--mantine-color-climate-1)',
+                  color: 'var(--mantine-color-climate-7)',
+                  borderRadius: '50px',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  width: 'max-content',
+                }}
+              >
+                🌍 Empowering 38 Million African Farmers
+              </Box>
+            </motion.div>
+            <Box
+              display={{ base: 'none', md: 'block', lg: 'block' }}
+              mt={{ sm: 100, base: 100, md: 40 }}
+              style={{ overflow: 'hidden', maxWid: '70%' }}
+            >
+              <motion.div
+                style={{
+                  display: 'flex',
+                  gap: 40,
+                  width: 'max-content',
+                }}
+                animate={{
+                  x: [0, -1000],
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                  ease: 'linear',
+                }}
+              >
+                {[...climateResilienceForecast, ...climateResilienceForecast].map((item, index) => (
+                  <Stack key={`${item.name}-${index}`} style={{borderBottom: '4px solid orange', height: ''}} gap={-10}>
+                    <Flex>
+                      <Text size="xs" fw={600}>{item.name}</Text>
+                      <Text>-</Text>
+                      <Text size="xs" fw={600}>{item.country}</Text>
+                    </Flex>
+                    <Flex align="center" justify="center" gap="xs">
+                      <Image
+                        width={40}
+                        height={40}
+                        src={item.condition_icon}
+                        style={{ objectFit: 'cover', borderRadius: 8 }}
+                        alt={`Livestocx Backed by: ${item.name}`}
+                      />
+                      <Stack gap={-10}>
+                        <Text size="xs">{item.temp_c } <span style={{fontWeight: 600}}>°C</span></Text>
+                        <Text size="xs">{item.temp_f} <span style={{fontWeight: 600}}>°F</span></Text>
+                      </Stack>
+                    </Flex>
+                  </Stack>
+                ))}
+              </motion.div>
+            </Box>
+          </Flex>
           <Grid gutter="xl" align="center">
             {/* Content */}
             <Grid.Col span={{ base: 12, lg: 6 }}>
@@ -21,26 +94,6 @@ const Hero = () => {
                 transition={{ duration: 0.8 }}
               >
                 <Stack gap="xl">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    <Box
-                      style={{
-                        display: 'inline-block',
-                        padding: '8px 16px',
-                        background: 'var(--mantine-color-climate-1)',
-                        color: 'var(--mantine-color-climate-7)',
-                        borderRadius: '50px',
-                        fontSize: '14px',
-                        fontWeight: 500,
-                      }}
-                    >
-                      🌍 Empowering 38 Million African Farmers
-                    </Box>
-                  </motion.div>
-
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
