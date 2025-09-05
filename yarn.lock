@@ -3768,6 +3768,7 @@ __metadata:
     postcss-simple-vars: "npm:^7.0.1"
     prettier: "npm:^3.5.3"
     react: "npm:19.0.0"
+    react-countup: "npm:^6.5.3"
     react-dom: "npm:19.0.0"
     react-player: "npm:^2.16.0"
     react-share: "npm:^5.2.2"
@@ -5090,6 +5091,13 @@ __metadata:
     typescript:
       optional: true
   checksum: 10c0/1c1703be4f02a250b1d6ca3267e408ce16abfe8364193891afc94c2d5c060b69611fdc8d97af74b7e6d5d1aac0ab2fb94d6b079573146bc2d756c2484ce5f0ee
+  languageName: node
+  linkType: hard
+
+"countup.js@npm:^2.8.0":
+  version: 2.9.0
+  resolution: "countup.js@npm:2.9.0"
+  checksum: 10c0/41ca03df2dd9f088a949353eb28f4bc6b0b15e5e5b6c93674b72d0e454b8ba4bbe1ce18441ab088e1446221c9197aebc26100812263ff213d62cc811ba0d7952
   languageName: node
   linkType: hard
 
@@ -10326,6 +10334,17 @@ __metadata:
   version: 1.2.1
   resolution: "range-parser@npm:1.2.1"
   checksum: 10c0/96c032ac2475c8027b7a4e9fe22dc0dfe0f6d90b85e496e0f016fbdb99d6d066de0112e680805075bd989905e2123b3b3d002765149294dce0c1f7f01fcc2ea0
+  languageName: node
+  linkType: hard
+
+"react-countup@npm:^6.5.3":
+  version: 6.5.3
+  resolution: "react-countup@npm:6.5.3"
+  dependencies:
+    countup.js: "npm:^2.8.0"
+  peerDependencies:
+    react: ">= 16.3.0"
+  checksum: 10c0/d18beba2a7dc5f2dce346d47c90e76570f862a7f49acb7ad73028acfd584f691c84dde3b1c8743181d158636a20a7b9201ad8c6c8b4d310ff02ca68eaccf997f
   languageName: node
   linkType: hard
 

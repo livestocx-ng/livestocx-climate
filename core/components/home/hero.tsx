@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 import { Box, Container, Flex, Grid, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { useAppContext } from '@/core/context';
 import useFetchClimateResilienceForecastQuery from '@/core/hooks/public/useFetchClimateResilienceForecastQuery';
@@ -41,7 +42,7 @@ const Hero = () => {
             </motion.div>
             <Box
               display={{ base: 'none', md: 'block', lg: 'block' }}
-              mt={{ sm: 100, base: 100, md: 40 }}
+              mt={{ sm: 0, base: 0, md: 0 }}
               style={{ overflow: 'hidden', maxWid: '70%' }}
             >
               <motion.div
@@ -61,26 +62,52 @@ const Hero = () => {
                 }}
               >
                 {[...climateResilienceForecast, ...climateResilienceForecast].map((item, index) => (
-                  <Stack key={`${item.name}-${index}`} style={{borderBottom: '4px solid orange', height: ''}} gap={-10}>
-                    <Flex>
-                      <Text size="xs" fw={600}>{item.name}</Text>
-                      <Text>-</Text>
-                      <Text size="xs" fw={600}>{item.country}</Text>
-                    </Flex>
-                    <Flex align="center" justify="center" gap="xs">
-                      <Image
+                  <div
+                    key={`${item.name}-${index}`}
+                    style={{
+                      borderBottom: '2px solid orange',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '-20px',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 600 }}>{item.name}</span>
+                      <span>-</span>
+                      <span style={{ fontSize: '12px', fontWeight: 600 }}>{item.country}</span>
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '2px',
+                      }}
+                    >
+                      <img
                         width={40}
                         height={40}
                         src={item.condition_icon}
-                        style={{ objectFit: 'cover', borderRadius: 8 }}
                         alt={`Livestocx Backed by: ${item.name}`}
+                        style={{ objectFit: 'cover', borderRadius: 8 }}
                       />
-                      <Stack gap={-10}>
-                        <Text size="xs">{item.temp_c } <span style={{fontWeight: 600}}>°C</span></Text>
-                        <Text size="xs">{item.temp_f} <span style={{fontWeight: 600}}>°F</span></Text>
-                      </Stack>
-                    </Flex>
-                  </Stack>
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: -20,
+                          lineHeight: -20,
+                        }}
+                      >
+                        <span style={{ fontSize: '10px' }}>
+                          {item.temp_c} <span style={{ fontWeight: 600, fontSize: 10 }}>°C</span>
+                        </span>
+                        <span style={{ fontSize: '10px' }}>
+                          {item.temp_f} <span style={{ fontWeight: 600, fontSize: 10 }}>°F</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </motion.div>
             </Box>
@@ -91,7 +118,7 @@ const Hero = () => {
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.1 }}
               >
                 <Stack gap="xl">
                   <motion.div
@@ -191,9 +218,15 @@ const Hero = () => {
                     <Grid gutter="xl" style={{ paddingTop: '2rem' }}>
                       <Grid.Col span={4}>
                         <Box>
-                          <Text size="2rem" fw={700} c="climate.6">
-                            13,390
-                          </Text>
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                          >
+                            <Text size="2rem" fw={700} c="climate.6">
+                              <CountUp end={13390} duration={10} separator="," />
+                            </Text>
+                          </motion.div>
                           <Text size="sm" c="dimmed">
                             Active Farmers
                           </Text>
