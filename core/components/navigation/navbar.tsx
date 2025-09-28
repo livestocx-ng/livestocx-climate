@@ -1,9 +1,11 @@
 'use client';
+
 import Link from 'next/link';
-import classes from './navbar.module.css';
-import { navLinks } from '@/core/utilities';
-import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { IconExternalLink } from '@tabler/icons-react';
 import { Box, Burger, Button, Container, Drawer, Group, Image, rem, Stack } from '@mantine/core';
+import { useDisclosure, useWindowScroll } from '@mantine/hooks';
+import { navLinks } from '@/core/utilities';
+import classes from './navbar.module.css';
 
 export function Navbar() {
   const [scroll] = useWindowScroll();
@@ -23,7 +25,7 @@ export function Navbar() {
           borderBottom: scroll.y > 0 ? '1px solid var(--mantine-color-gray-3)' : '',
         }}
       >
-        <Container size="xxl" py={20}>
+        <Container size="xl" py={20}>
           <Group justify="space-between" align="center">
             {/* Left section: Logo and Navigation */}
             <Group>
@@ -64,25 +66,31 @@ export function Navbar() {
             </Group>
 
             <Group>
-              {/* <ChatConversationsButton isScrolling={scroll.y > 0} />
-              <AccountButton isScrolling={scroll.y > 0} />
-              <Button
-                variant="filled"
-                color="orange"
-                radius="xl"
-                size="xs"
-                // component={Link}
-                // href="/sell"
-                onClick={() => {
-                  if (accountInfo?.role === 'CUSTOMER') {
-                    return openUpdateUserRoleDrawer();
-                  } else if (vendorInfo?.isUpdated === false) {
-                    return openUpdateBusinessProfileDrawer();
-                  }
-                }}
-              >
-                Sell
-              </Button> */}
+              <Link href="https://livestocx.com" target="_blank">
+                {' '}
+                <Button
+                  variant="filled"
+                  color="primary"
+                  radius="xl"
+                  size="xs"
+                  fw={600}
+                  style={{
+                    background: 'linear-gradient(135deg, #10b981 20%, #059669 50%, #047857 100%)',
+                    border: 'none',
+                    color: 'white',
+                    fontWeight: 500,
+                    transition: 'transform 0.2s ease-in-out',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  Marketplace &nbsp; <IconExternalLink size={16} />
+                </Button>
+              </Link>
               <Burger
                 opened={opened}
                 onClick={toggle}
