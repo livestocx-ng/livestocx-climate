@@ -252,6 +252,16 @@ const Hero = () => {
                           </Text>
                         </Box>
                       </Grid.Col>
+                      <Grid.Col span={4}>
+                        <Box>
+                          <Text size="2rem" fw={700} c="climate.6">
+                            $59M
+                          </Text>
+                          <Text size="sm" c="dimmed">
+                            Saved in Losses
+                          </Text>
+                        </Box>
+                      </Grid.Col>
                     </Grid>
                   </motion.div>
                 </Stack>

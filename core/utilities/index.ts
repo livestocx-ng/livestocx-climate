@@ -252,40 +252,95 @@ export const appFeatures = [
 
 
 export const Sponsors: Sponsor[] = [
-	{
-		name: 'AI Collective',
-		image: '/images/sponsors/ai_collective.png',
-	},
-	{
-		name: 'Federal Ministry of Communications, Innovation and Development Economy',
-		image: '/images/sponsors/fmcide.png',
-	},
-	{
-		name: 'National Center for Artificial Intelligence and Robotics',
-		image: '/images/sponsors/ncair.png',
-	},
-	{
-		name: 'National Information Technology Development Agency',
-		image: '/images/sponsors/nitda.png',
-	},
-	{
-		name: 'Deutsche Gesellschaft für Internationale Zusammenarbeit',
-		image: '/images/sponsors/giz.jpg',
-	},
-	{
-		name: 'Co-founded by the European Union',
-		image: '/images/sponsors/eu_2.png',
-	},
-	{
-		name: 'Agric-Business Facility for Africa',
-		image: '/images/sponsors/abfa.jpg',
-	},
-	{
-		name: 'german cooperation DEUTSCHE ZUSAMMENARBEIT',
-		image: '/images/sponsors/gcd.jpg',
-	},
-	{
-		name: 'Organisation of African, Caribbean and Pacific States (OACPS)',
-		image: '/images/sponsors/oacps.jpg',
-	},
+	// {
+	// 	name: 'AI Collective',
+	// 	image: '/images/sponsors/ai_collective.png',
+	// },
+	// {
+	// 	name: 'Federal Ministry of Communications, Innovation and Development Economy',
+	// 	image: '/images/sponsors/fmcide.png',
+	// },
+	// {
+	// 	name: 'National Center for Artificial Intelligence and Robotics',
+	// 	image: '/images/sponsors/ncair.png',
+	// },
+	// {
+	// 	name: 'National Information Technology Development Agency',
+	// 	image: '/images/sponsors/nitda.png',
+	// },
+	// {
+	// 	name: 'Deutsche Gesellschaft für Internationale Zusammenarbeit',
+	// 	image: '/images/sponsors/giz.jpg',
+	// },
+	// {
+	// 	name: 'Co-founded by the European Union',
+	// 	image: '/images/sponsors/eu_2.png',
+	// },
+	// {
+	// 	name: 'Agric-Business Facility for Africa',
+	// 	image: '/images/sponsors/abfa.jpg',
+	// },
+	// {
+	// 	name: 'german cooperation DEUTSCHE ZUSAMMENARBEIT',
+	// 	image: '/images/sponsors/gcd.jpg',
+	// },
+	// {
+	// 	name: 'Organisation of African, Caribbean and Pacific StatesOACPS)',
+	// 	image: '/images/sponsors/oacps.jpg',
+	// },
+
+  {
+    name: 'Kenya Climate Innovation Centre',
+    image: '/images/sponsors/kcic.png',
+  },
+  {
+    name: 'Global Centre on Adaptation',
+    image: '/images/sponsors/gca.png',
+  },
+  // {
+  //   name: 'AI Collective',
+  //   image: '/sponsors/ai_collective.png',
+  // },
+  {
+    name: 'Federal Ministry of Communications, Innovation and Development Economy',
+    image: '/images/sponsors/fmcide.png',
+  },
+  {
+    name: 'National Center for Artificial Intelligence and Robotics',
+    image: '/images/sponsors/ncair.png',
+  },
+  {
+    name: 'National Information Technology Development Agency',
+    image: '/images/sponsors/nitda.png',
+  },
+  {
+    name: 'Deutsche Gesellschaft für Internationale Zusammenarbeit',
+    image: '/images/sponsors/giz.jpg',
+  },
+  {
+    name: 'Co-founded by the European Union',
+    image: '/images/sponsors/eu.jpg',
+  },
+  {
+    name: 'Agric-Business Facility for Africa',
+    image: '/images/sponsors/abfa.jpg',
+  },
+  {
+    name: 'german cooperation DEUTSCHE ZUSAMMENARBEIT',
+    image: '/images/sponsors/gcd.jpg',
+  },
+  {
+    name: 'Organisation of African, Caribbean and Pacific States (OACPS)',
+    image: '/images/sponsors/oacps.jpg',
+  },
+
+  {
+    name: "African Development Bank Group",
+    image:"/images/sponsors/adbgroup.png"
+  },
+
+  {
+    name: "Climate Investment Funds",
+    image: "/images/sponsors/cif.jpg"
+  }
 ];
