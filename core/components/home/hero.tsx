@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import CountUp from 'react-countup';
+import { shuffle } from 'lodash';
 import { Box, Container, Flex, Grid, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { useAppContext } from '@/core/context';
 import useFetchClimateResilienceForecastQuery from '@/core/hooks/public/useFetchClimateResilienceForecastQuery';
@@ -10,6 +12,25 @@ const Hero = () => {
   useFetchClimateResilienceForecastQuery();
 
   const { climateResilienceForecast } = useAppContext();
+
+  const [shuffledForecast, setShuffledForecast] = useState<any[]>([]);
+  const [shuffledSponsors, setShuffledSponsors] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (climateResilienceForecast && climateResilienceForecast.length > 0) {
+      setShuffledForecast([
+        ...shuffle([...climateResilienceForecast]),
+        ...shuffle([...climateResilienceForecast]),
+      ]);
+    }
+  }, [climateResilienceForecast]);
+
+  useEffect(() => {
+    setShuffledSponsors([
+      ...shuffle([...Sponsors]),
+      ...shuffle([...Sponsors]),
+    ]);
+  }, []);
 
   return (
     <Box>
@@ -61,7 +82,7 @@ const Hero = () => {
                   ease: 'linear',
                 }}
               >
-                {[...climateResilienceForecast, ...climateResilienceForecast].map((item, index) => (
+                {shuffledForecast.map((item, index) => (
                   <div
                     key={`${item.name}-${index}`}
                     style={{
@@ -357,7 +378,7 @@ const Hero = () => {
             ease: 'linear',
           }}
         >
-          {[...Sponsors, ...Sponsors].map((sponsor, index) => (
+          {shuffledSponsors.map((sponsor, index) => (
             <Image
               key={`${sponsor.name}-${index}`}
               width={70}
