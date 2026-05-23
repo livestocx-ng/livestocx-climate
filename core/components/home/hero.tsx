@@ -232,16 +232,6 @@ const Hero = () => {
                           </Text>
                         </Box>
                       </Grid.Col>
-                      {/* <Grid.Col span={4}>
-                      <Box>
-                        <Text size="2rem" fw={700} c="climate.6">
-                          190K
-                        </Text>
-                        <Text size="sm" c="dimmed">
-                          Lives Supported
-                        </Text>
-                      </Box>
-                    </Grid.Col> */}
                       <Grid.Col span={4}>
                         <Box>
                           <Text size="2rem" fw={700} c="climate.6">
