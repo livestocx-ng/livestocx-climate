@@ -2594,17 +2594,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/carousel@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@mantine/carousel@npm:8.0.0"
+"@mantine/carousel@npm:^7.17.4":
+  version: 7.17.8
+  resolution: "@mantine/carousel@npm:7.17.8"
   peerDependencies:
-    "@mantine/core": 8.0.0
-    "@mantine/hooks": 8.0.0
-    embla-carousel: ">=8.0.0"
-    embla-carousel-react: ">=8.0.0"
+    "@mantine/core": 7.17.8
+    "@mantine/hooks": 7.17.8
+    embla-carousel-react: ">=7.0.0"
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: 10c0/363fc3d9b20bf8dfc0aa1466b402a07e0dcc4ec202f7d70eb338149d3144acb5b29a07e9467a3eb3631d0608de606d8fce0b261acf2f53cba3e922a16473fb59
+  checksum: 10c0/76b6d207a420bd69648d9850e1f07edca2de78fa80558b48aef4ae3a302cc429923f4dbd47fa698b392699e9ecde9426947c9412b3d8a8a65a6d404af43b6eab
   languageName: node
   linkType: hard
 
@@ -3953,7 +3952,7 @@ __metadata:
     "@babel/core": "npm:^7.26.10"
     "@eslint/js": "npm:^9.23.0"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.1"
-    "@mantine/carousel": "npm:^8.0.0"
+    "@mantine/carousel": "npm:^7.17.4"
     "@mantine/core": "npm:7.17.2"
     "@mantine/dates": "npm:^7.17.4"
     "@mantine/dropzone": "npm:^7.17.4"
@@ -3991,7 +3990,6 @@ __metadata:
     lottie-react: "npm:^2.4.1"
     next: "npm:^15.2.6"
     next-auth: "npm:^4.24.11"
-    ngx-fluent-ui-icons: "npm:^1.0.2"
     postcss: "npm:^8.5.3"
     postcss-preset-mantine: "npm:1.17.0"
     postcss-simple-vars: "npm:^7.0.1"
@@ -9496,19 +9494,6 @@ __metadata:
   bin:
     next: dist/bin/next
   checksum: 10c0/6a120afbc45b96aa14debba6375602d6319093af4e3e8c648cf22b12ffb9db016c889df5e764cf5e0aa414ad60505db4e2095624a19f4b71316561076158651a
-  languageName: node
-  linkType: hard
-
-"ngx-fluent-ui-icons@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "ngx-fluent-ui-icons@npm:1.0.2"
-  dependencies:
-    tslib: "npm:^2.0.0"
-  peerDependencies:
-    "@angular/common": ">=14"
-    "@angular/core": ">=14"
-    "@fluentui/svg-icons": ^1.1.292
-  checksum: 10c0/66af0545e78595ce997e9697b099b9af4c188f2ce52057522f6233476733a57551626fd403c5da4c3f31db0d0a7cdb21091bb1c1cdd04d055a94af9714482b24
   languageName: node
   linkType: hard
 
