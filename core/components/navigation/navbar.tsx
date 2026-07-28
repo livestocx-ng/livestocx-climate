@@ -26,43 +26,47 @@ export function Navbar() {
         }}
       >
         <Container size="xl" py={20}>
-          <Group justify="space-between" align="center">
-            {/* Left section: Logo and Navigation */}
-            <Group>
-              <Link href="/">
-                <Image
-                  w={30}
-                  h="auto"
-                  alt="lvx"
-                  src="/icons/icon_clif.jpg"
-                  style={{ border: '1px solid #11111120', borderRadius: '10px' }}
-                />
-              </Link>
+          <Group justify="space-between" align="center" style={{ position: 'relative' }}>
+            <Link href="/">
+              <Image
+                w={30}
+                h="auto"
+                alt="lvx"
+                src="/icons/icon_clif.jpg"
+                style={{ border: '1px solid #11111120', borderRadius: '10px' }}
+              />
+            </Link>
 
-              {/* Desktop navigation */}
-              <Group gap={40} visibleFrom="xs">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.link}
-                    target={link.target}
-                    style={{
-                      display: 'block',
-                      lineHeight: 1,
-                      padding: `${rem(8)} ${rem(12)}`,
-                      borderRadius: 'var(--mantine-radius-sm)',
-                      textDecoration: 'none',
-                      color:
-                        scroll.y > 0 ? 'var(--mantine-color-black)' : 'var(--mantine-color-black)',
-                      fontSize: 'var(--mantine-font-size-sm)',
-                      fontWeight: 500,
-                      transition: 'background-color 150ms ease',
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </Group>
+            <Group
+              gap={40}
+              visibleFrom="xs"
+              style={{
+                position: 'absolute',
+                left: '50%',
+                transform: 'translateX(-50%)',
+              }}
+            >
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.link}
+                  target={link.target}
+                  style={{
+                    display: 'block',
+                    lineHeight: 1,
+                    padding: `${rem(8)} ${rem(12)}`,
+                    borderRadius: 'var(--mantine-radius-sm)',
+                    textDecoration: 'none',
+                    color:
+                      scroll.y > 0 ? 'var(--mantine-color-black)' : 'var(--mantine-color-black)',
+                    fontSize: 'var(--mantine-font-size-sm)',
+                    fontWeight: 500,
+                    transition: 'background-color 150ms ease',
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </Group>
 
             <Group>

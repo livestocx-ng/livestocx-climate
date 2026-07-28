@@ -22,12 +22,12 @@ export const productDisplayTypes: ProductDisplayType[] = [
 ];
 
 export const navLinks = [
-  { link: '/', label: 'Home', target: '' },
+  // { link: '/', label: 'Home', target: '' },
   { link: 'https://livestocx.com/signup', label: 'Register', target: '_blank' },
   { link: '/about-us', label: 'About Us', target: '' },
-  { link: '/contact-us', label: 'Contact Us', target: '' },
-  { link: '/privacy-policy', label: 'Privacy', target: '' },
-  { link: '/terms-of-service', label: 'Terms', target: '' },
+  // { link: '/contact-us', label: 'Contact Us', target: '' },
+  // { link: '/privacy-policy', label: 'Privacy', target: '' },
+  { link: '/terms-of-service', label: 'Terms of Service', target: '' },
 ];
 
 export const platformFaqs = [

@@ -20,7 +20,7 @@ const TermsOfService = () => {
         Terms of Service
       </Title>
       <Stack gap={40}>
-        <Box px={20}>
+        <Box px={80}>
           <Title order={5}>Last Updated on: 15th May, 2024.</Title>
           <Text fz={{ base: 14, sm: 14, md: 16 }}>
             These terms and conditions (“Agreement”) outline the fundamental terms and regulations
@@ -41,7 +41,7 @@ const TermsOfService = () => {
             This Agreement governs your engagement with and utilization of the Website and Services.
           </Text>
         </Box>
-        <List type="ordered" px={20} spacing={20}>
+        <List type="ordered" px={80} spacing={20}>
           <List.Item fz={{ base: 14, sm: 14, md: 16 }}>
             Privacy and Data Protection: We are committed to protecting your privacy and handling
             your personal information in accordance with our Privacy Policy. By using the website,
@@ -117,7 +117,7 @@ const TermsOfService = () => {
             subject to the exclusive jurisdiction of the Nigerian courts.
           </List.Item>
         </List>
-        <Box px={20} mt={20}>
+        <Box px={80} mt={20}>
           <Text fz={{ base: 14, sm: 14, md: 16 }}>
             Please read these Terms carefully before using the Website. By using the Website, you
             signify your acceptance of these Terms.

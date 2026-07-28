@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import CountUp from 'react-countup';
 import { shuffle } from 'lodash';
+import CountUp from 'react-countup';
+import { Carousel } from '@mantine/carousel';
 import { Box, Container, Flex, Grid, Group, Image, Stack, Text, Title } from '@mantine/core';
+import type { EmblaCarouselType } from 'embla-carousel';
 import { useAppContext } from '@/core/context';
 import useFetchClimateResilienceForecastQuery from '@/core/hooks/public/useFetchClimateResilienceForecastQuery';
 import { Sponsors } from '@/core/utilities';
@@ -15,6 +17,7 @@ const Hero = () => {
 
   const [shuffledForecast, setShuffledForecast] = useState<any[]>([]);
   const [shuffledSponsors, setShuffledSponsors] = useState<any[]>([]);
+  const [embla, setEmbla] = useState<EmblaCarouselType | null>(null);
 
   useEffect(() => {
     if (climateResilienceForecast && climateResilienceForecast.length > 0) {
@@ -26,11 +29,20 @@ const Hero = () => {
   }, [climateResilienceForecast]);
 
   useEffect(() => {
-    setShuffledSponsors([
-      ...shuffle([...Sponsors]),
-      ...shuffle([...Sponsors]),
-    ]);
+    setShuffledSponsors([...shuffle([...Sponsors]), ...shuffle([...Sponsors])]);
   }, []);
+
+  useEffect(() => {
+    if (!embla) {
+      return undefined;
+    }
+
+    const interval = window.setInterval(() => {
+      embla.scrollNext();
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, [embla]);
 
   return (
     <Box>
@@ -287,12 +299,41 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <Box style={{ position: 'relative' }}>
-                  <Image
-                    src="/images/image_home_2.jpg"
-                    alt="African livestock farmers using climate technology"
-                    radius="xl"
-                    style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
-                  />
+                  <Carousel
+                    loop
+                    withIndicators
+                    getEmblaApi={setEmbla}
+                    styles={{
+                      indicators: {
+                        bottom: 16,
+                      },
+                      indicator: {
+                        width: 10,
+                        height: 10,
+                        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                        '&[data-active]': {
+                          backgroundColor: '#ffffff',
+                        },
+                      },
+                    }}
+                  >
+                    <Carousel.Slide>
+                      <Image
+                        src="/images/image_home_2.jpg"
+                        alt="African livestock farmers using climate technology"
+                        radius="xl"
+                        style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
+                      />
+                    </Carousel.Slide>
+                    <Carousel.Slide>
+                      <Image
+                        src="/images/image_fish-farmer.png"
+                        alt="African fish farmer harvesting fish"
+                        radius="xl"
+                        style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
+                      />
+                    </Carousel.Slide>
+                  </Carousel>
 
                   {/* Floating Cards */}
                   <motion.div
