@@ -53,7 +53,7 @@ const Hero = () => {
       >
         <Container size="xl">
           <Flex align="center" justify="start" gap="xl">
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -72,7 +72,7 @@ const Hero = () => {
               >
                 🌍 Empowering 38 Million African Farmers
               </Box>
-            </motion.div>
+            </motion.div> */}
             <Box
               display={{ base: 'none', md: 'block', lg: 'block' }}
               mt={{ sm: 0, base: 0, md: 0 }}
@@ -278,7 +278,7 @@ const Hero = () => {
                       <Grid.Col span={4}>
                         <Box>
                           <Text size="2rem" fw={700} c="climate.6">
-                            $59M
+                            $5.9M
                           </Text>
                           <Text size="sm" c="dimmed">
                             Saved in Losses
