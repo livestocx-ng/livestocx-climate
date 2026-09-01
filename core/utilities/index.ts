@@ -24,6 +24,7 @@ export const productDisplayTypes: ProductDisplayType[] = [
 export const navLinks = [
   // { link: '/', label: 'Home', target: '' },
   { link: 'https://livestocx.com/signup', label: 'Register', target: '_blank' },
+  { link: '/#pricing', label: 'Pricing', target: '' },
   { link: '/about-us', label: 'About Us', target: '' },
   // { link: '/contact-us', label: 'Contact Us', target: '' },
   // { link: '/privacy-policy', label: 'Privacy', target: '' },

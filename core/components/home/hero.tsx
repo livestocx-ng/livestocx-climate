@@ -317,14 +317,14 @@ const Hero = () => {
                       },
                     }}
                   >
-                    <Carousel.Slide>
+                    {/* <Carousel.Slide>
                       <Image
                         src="/images/image_home_2.jpg"
                         alt="African livestock farmers using climate technology"
                         radius="xl"
                         style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
                       />
-                    </Carousel.Slide>
+                    </Carousel.Slide> */}
                     <Carousel.Slide>
                       <Image
                         src="/images/image_fish-farmer.png"
