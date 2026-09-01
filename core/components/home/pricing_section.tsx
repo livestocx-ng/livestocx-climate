@@ -255,7 +255,7 @@ export const PricingSection = () => {
                       {/* Pricing Block */}
                       <Box
                         p="lg"
-                        radius="md"
+                        // radius="md"
                         style={{
                           background: 'linear-gradient(135deg, #f0fdf4 0%, #e6f7f1 100%)',
                           borderRadius: 16,
