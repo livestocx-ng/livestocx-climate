@@ -87,7 +87,7 @@ const ServicesSection = () => {
               AI-Powered Climate Adaptation
             </Title>
             <Text size="xl" c="dimmed" ta="center" maw={800}>
-              Supporting over 13,390 livestock farmers across Nigeria, Ghana, and Niger with 
+              Supporting over 3,000 livestock farmers across Nigeria, Ghana, and Niger with 
               comprehensive climate adaptation tools, disease monitoring, and veterinary response systems.
             </Text>
           </Stack>

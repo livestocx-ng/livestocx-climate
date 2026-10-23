@@ -6,7 +6,7 @@ const ImpactSection = () => {
   const impacts = [
     {
       icon: IconUsers,
-      value: "13,390",
+      value: "3,000",
       label: "Active Farmers",
       description: "Currently using our platform",
       color: "climate"
