@@ -257,7 +257,7 @@ const Hero = () => {
                             viewport={{ once: true }}
                           >
                             <Text size="2rem" fw={700} c="climate.6">
-                              <CountUp end={13390} duration={10} separator="," />
+                              <CountUp end={3000} duration={10} separator="," />
                             </Text>
                           </motion.div>
                           <Text size="sm" c="dimmed">
